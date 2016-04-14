@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE html
+   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <meta content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <title>
+      Staff Page
+    </title>
+    <!--  Fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Raleway:400,800,500,600,300,700" rel="stylesheet" type="text/css" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <!--  Styles CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/animate.css" rel="stylesheet" />
+    <!--  HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+      queries -->
+    <!--  [if lt IE 9]> <script
+      src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script
+      src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif] -->
+    
+    </h:head>
+    
+  <h:body>
+      <ui:insert name="header" >
+		  <ui:include src="/template/navBar.xhtml" />
+		</ui:insert>
+    <div class="pages-header-container">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="pages-header">
+              <ul class="breadcrumbs">
+                <li>
+                  <a href="index.html">Admin</a>
+                </li>
+                <li>
+                  <a href="about-us.html">Edit Assign Faculty</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="blog-posts">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="sidebar">
+              <div class="widget">
+                <div class="search-widget">
+                  <form method="get" id="searchform_" action="">
+                    <input type="text" onkeyup="keyUp();"
+                    onblur="if(this.value == '') {this.value=this.defaultValue}"
+                    onfocus="if(this.value=='' || this.value == 'Search...') this.value=''"
+                    value="Search..." name="s" /> <input type="submit" value=" " />
+                    <i class="fa fa-search search-button"></i>
+                  </form>
+                </div>
+              </div>
+              <div class="widget widget_categories">
+                <h4 class="btline-title">
+                  Categories
+                </h4>
+                <ul>
+                  <li>
+                    <a href="#">All Course</a>
+                  </li>
+                  <li>
+                    <a href="#">Staff</a>
+                  </li>
+                  <li>
+                    <a href="#">Business</a>
+                  </li>
+                  <li>
+                    <a href="#">Traveling </a>
+                  </li>
+                  <li>
+                    <a href="#">Development </a>
+                  </li>
+                  <li>
+                    <a href="#">Photography </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="widget widget_recent_entries">
+                
+              </div>
+             
+            </div>
+          </div>
+            <div class="col-lg-9">
+                <div id="contact-form">
+                    <h:form class="nav-btn single-post-nav" id="editForm" >          
+                    <h3 class="btline-title">Profile of</h3>
+                    <div class="post-info">
+                      <h3 class="post-title">
+                        <a href="single-post.html"></a>
+                      </h3>
+                      <div class="post-meta">
+                          <span>
+                              <h4>Course</h4>
+                              <h:selectOneMenu value="#{assignFacultyBean.course}" style="width: 100%" >
+                                  <f:selectItems var="v" value="#{assignFacultyBean.byQueryId}" itemValue="#{v.courseId}" itemLabel="#{v.courseName}" />
+                                </h:selectOneMenu>  
+                               <h4>Faculty</h4>
+                               <h:selectOneMenu value="#{assignFacultyBean.facultyId}" style="width: 100%" >
+                                   <f:selectItems var="v" value="#{assignFacultyBean.byQueryIdFaculty}" itemValue="#{v.facultyId}" itemLabel="#{v.falcutyName}" />
+                                </h:selectOneMenu>  
+                          </span>
+                          <span>
+                              <h4>PVC</h4>
+                              <h:selectOneMenu value="#{assignFacultyBean.pvcId}" style="width: 100%" >
+                                  <f:selectItems var="v" value="#{assignFacultyBean.byQueryIdPVC}" itemValue="#{v.pvcId}" itemLabel="#{v.pvcName}" />
+                                </h:selectOneMenu>
+                              <h4>DLT</h4>
+                              <h:selectOneMenu value="#{assignFacultyBean.dltId}" style="width: 100%" >
+                                    
+                                  <f:selectItems var="v" value="#{assignFacultyBean.byQueryIdDLT}" itemValue="#{v.dltId}" itemLabel="#{v.dltName}" />
+                                </h:selectOneMenu>
+                          </span>
+                      </div>
+                    </div>
+
+                    <h:commandButton class="button fa fa-long-arrow-right" value="Update" action="#{assignFacultyBean.editAssignFaculty()}"/>    
+                        </h:form>
+                </div>
+            </div>
+                 
+                </div>
+                </div>
+            </div>
+    
+    <div class="footer-area-container">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="footer-widget">
+              <img class="fotter-logo" src="images/fotter-logo.png" alt="" />
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit
+                ipsum voluptas dolore temporibus? Minus commodi eum ipsa illum.
+                Fugit cumque fuga.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="footer-widget widget_nav_menu">
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="footer-widget widget_nav_menu">
+              <h4 class="footer-widget-title">
+                Page
+              </h4>
+              <ul>
+                <li class="menu-item">
+                  <a href="#"> Home Page </a>
+                </li>
+                <li class="menu-item">
+                  <a href="#"> Portfolio </a>
+                </li>
+                <li class="menu-item">
+                  <a href="#"> Blog </a>
+                </li>
+                <li class="menu-item">
+                  <a href="#"> 404 Pages </a>
+                </li>
+                <li class="menu-item">
+                  <a href="#"> About Us</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#"> Contact Us </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="footer-widget">
+              <h4 class="footer-widget-title">
+                Contact Us
+              </h4>
+              <div class="footer-contact">
+                34, Lorem Dolor, Amet Lorem, Ipsum Phone: 600 12003 45006 Fax:
+                08010 12323 300456 Email: info@loremipsum.com
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-holder">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <p>
+              2015 Â© All Rights Reserved
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  Bootstrap core JavaScript
+      ================================================== -->
+    <!--  Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.min.js" type="text/javascript" ></script>
+    <script
+    src="js/bootstrap.min.js" type="text/javascript" ></script><script
+    src="js/superfish.js" type="text/javascript" ></script><script
+    src="js/jquery.easing.js" type="text/javascript" ></script><script
+    src="js/wow.js" type="text/javascript" ></script><script
+    src="js/jquery.isotope.min.js" type="text/javascript" ></script><script
+    src="js/owl.carousel.min.js" type="text/javascript" ></script><script
+    src="js/jquery.colorbox-min.js" type="text/javascript" ></script><script
+    src="js/jflickrfeed.min.js" type="text/javascript"></script><script
+    src="js/jquery.fitvids.js" type="text/javascript" ></script><script
+    src="js/jquery-ui-1.10.4.custom.min.js" type="text/javascript"></script> <script
+    src="js/jquery.fractionslider.min.js" type="text/javascript"></script> <script src="js/main.js"
+    type="text/javascript"></script>
+  </h:body>
+</html>

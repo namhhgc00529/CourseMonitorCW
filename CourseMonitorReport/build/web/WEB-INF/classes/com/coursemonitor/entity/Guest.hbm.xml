@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 28, 2016 9:57:59 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.coursemonitor.entity.Guest" table="Guest" schema="dbo" catalog="CourseMonitorReport" optimistic-lock="version">
+        <id name="GId" type="int">
+            <column name="G_Id" />
+            <generator class="assigned" />
+        </id>
+        <property name="GName" type="string">
+            <column name="G_Name" length="50" />
+        </property>
+        <property name="GEmail" type="string">
+            <column name="G_Email" length="50" />
+        </property>
+        <property name="GUsername" type="string">
+            <column name="G_Username" length="50" />
+        </property>
+        <property name="GPassword" type="string">
+            <column name="G_Password" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

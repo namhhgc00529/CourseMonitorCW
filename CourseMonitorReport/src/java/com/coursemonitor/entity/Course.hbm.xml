@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 10, 2016 10:03:52 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.coursemonitor.entity.Course" table="Course" schema="dbo" catalog="CourseMonitorReport" optimistic-lock="version">
+        <id name="courseId" type="string">
+            <column name="CourseId" length="50" />
+            <generator class="assigned" />
+        </id>
+        <property name="courseName" type="string">
+            <column name="CourseName" length="50" />
+        </property>
+        <property name="academicSession" type="string">
+            <column name="AcademicSession" length="50" />
+        </property>
+        <property name="courseImg" type="string">
+            <column name="CourseImg" length="100" />
+        </property>
+        <property name="description" type="string">
+            <column name="Description" length="200" />
+        </property>
+        <set name="assignCourses" table="AssignCourse" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CourseId" length="50" not-null="true" />
+            </key>
+            <one-to-many class="com.coursemonitor.entity.AssignCourse" />
+        </set>
+        <set name="assignFaculties" table="AssignFaculty" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CourseId" length="50" />
+            </key>
+            <one-to-many class="com.coursemonitor.entity.AssignFaculty" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 10, 2016 10:03:52 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.coursemonitor.entity.AssignCourse" table="AssignCourse" schema="dbo" catalog="CourseMonitorReport" optimistic-lock="version">
+        <composite-id name="id" class="com.coursemonitor.entity.AssignCourseId">
+            <key-property name="courseId" type="string">
+                <column name="CourseId" length="50" />
+            </key-property>
+            <key-property name="year" type="int">
+                <column name="Year" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="course" class="com.coursemonitor.entity.Course" update="false" insert="false" fetch="select">
+            <column name="CourseId" length="50" not-null="true" />
+        </many-to-one>
+        <many-to-one name="staffByCmId" class="com.coursemonitor.entity.Staff" fetch="select">
+            <column name="CM_Id" />
+        </many-to-one>
+        <many-to-one name="staffByClId" class="com.coursemonitor.entity.Staff" fetch="select">
+            <column name="CL_Id" />
+        </many-to-one>
+        <property name="idAc" type="java.lang.Integer">
+            <column name="idAC" />
+        </property>
+        <property name="studentCount" type="java.lang.Integer">
+            <column name="StudentCount" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="Status" />
+        </property>
+    </class>
+</hibernate-mapping>

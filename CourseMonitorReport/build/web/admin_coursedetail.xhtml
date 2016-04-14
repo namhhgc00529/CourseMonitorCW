@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE html
+   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <meta content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <title>
+      Staff Page
+    </title>
+    <!--  Fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Raleway:400,800,500,600,300,700" rel="stylesheet" type="text/css" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <!--  Styles CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/animate.css" rel="stylesheet" />
+    <!--  HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+      queries -->
+    <!--  [if lt IE 9]> <script
+      src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script
+      src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif] -->
+    
+    </h:head>
+    
+  <h:body>
+      <ui:insert name="header" >
+		  <ui:include src="/template/navBar.xhtml" />
+		</ui:insert>
+    <div class="pages-header-container">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="pages-header">
+              <ul class="breadcrumbs">
+                <li>
+                  <a href="index.html">Admin</a>
+                </li>
+                <li>
+                  <a href="about-us.html">Create New Course</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="blog-posts">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="sidebar">
+              <div class="widget">
+                <div class="search-widget">
+                  <form method="get" id="searchform_" action="">
+                    <input type="text" onkeyup="keyUp();"
+                    onblur="if(this.value == '') {this.value=this.defaultValue}"
+                    onfocus="if(this.value=='' || this.value == 'Search...') this.value=''"
+                    value="Search..." name="s" /> <input type="submit" value=" " />
+                    <i class="fa fa-search search-button"></i>
+                  </form>
+                </div>
+              </div>
+              <div class="widget widget_categories">
+                <h4 class="btline-title">
+                  Categories
+                </h4>
+                <ul>
+                  <li>
+                    <a href="#">All Course</a>
+                  </li>
+                  <li>
+                    <a href="#">Staff</a>
+                  </li>
+                  <li>
+                    <a href="#">Business</a>
+                  </li>
+                  <li>
+                    <a href="#">Traveling </a>
+                  </li>
+                  <li>
+                    <a href="#">Development </a>
+                  </li>
+                  <li>
+                    <a href="#">Photography </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="widget widget_recent_entries">
+                
+              </div>
+              <div class="widget">
+                <h4 class="btline-title">
+                  About COURSE
+                </h4>
+                <p>
+                  Course (orienteering), a series of control points visited by orienteers during a competition, marked with red/white flags in the terrain, and corresponding purple symbols on the map
+                  Coursing is the pursuit of game or other animals by dogs
+                </p>
+              </div>
+            </div>
+          </div>
+            <div class="col-lg-9">
+                
+            
+          <div class="single-post">
+              <h:form class="nav-btn single-post-nav" id="editForm" >
+              <c:forEach items="#{courseBean.listDetail}" var="c">
+                  
+                    <div class="post-img">
+                        <figure>
+                            <img src="images/Course/#{c.courseImg}" width="200px" height="400px" alt="" />
+                            <figcaption class="overlay">
+                               <!--<a >-->
+                               <!--<a class="fa fa-plus" onclick="">-->
+                                       <h:inputFile class="tp-icon" value="#{courseBean.image}" >
+                                           
+                                       </h:inputFile>
+                                       <!--</a>-->
+                                   <!--</i>-->
+                               <!--</a>-->
+                             </figcaption>
+                        </figure>
+                    </div>
+                    <div class="post-info">
+                      <h3 class="post-title">
+                        <a href="single-post.html"></a>
+                      </h3>
+                      <div class="post-meta">
+<!--                          <span><h:inputText value="#{courseBean.cname}" p:placeholder="#{c.courseName}"/></span> <span>in <a
+                                  href="#"><h:inputText value="#{courseBean.academicSession}" p:placeholder="#{c.academicSession}"/></a> </span> <span>by <a
+                                          href="#"></a><h:inputText readonly="true" value="#{courseBean.cid}" p:placeholder="#{c.courseId}"/></span>-->
+                                <span><h:inputText id="txtCName" value="#{c.courseName}"/></span> <span>in <a
+                                  href="#"><h:inputText id="txtSession" value="#{c.academicSession}" /></a> </span> <span>by <a
+                                          href="#"></a><h:inputText id="txtID" readonly="true" value="#{c.courseId}"/></span>
+                      </div>
+                      <div class="post-content">
+                        <p>
+                            <h:inputTextarea id="txtDescription" style="width: 100%;height: 300px" value="#{c.description}"/>
+                        </p>
+                      </div>
+                    </div>
+                </c:forEach>
+              
+                    <f:metadata>
+                    <f:viewParam name="id" value="#{courseBean.id}" />
+                    </f:metadata>
+                  <h:commandButton class="button fa fa-long-arrow-right" value="Update Course" action="#{courseBean.editCourse()}"/>
+                      </h:form>
+                  <div class="share-box single-post-share-box">
+                    <span>Share this post</span>
+                    <ul class="share-box-icons">
+                      <li>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                      </li>
+                      <li>
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                      </li>
+                      <li>
+                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                      </li>
+                      <li>
+                        <a href="#"><i class="fa fa-dribbble"></i></a>
+                      </li>
+                      <li>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                      </li>
+                      <li>
+                        <a href="#"><i class="fa fa-google-plus"></i></a>
+                      </li>
+                    </ul>
+                  </div>
+                  <!--<ul class="nav-btn single-post-nav">-->
+                    <!--<li class="pre-btn">-->
+                      <!--<a href="#">--> 
+                      
+                      <!--</a>-->
+                    <!--</li>-->
+                    
+                  <!--</ul>-->
+                  <h4 class="btline-title btline-custom-title">
+                    About Author
+                  </h4>
+                  <div class="post-author">
+                    <img src="images/post-author.jpg" alt="" />
+                    <h5>
+                      John Doe
+                    </h5>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Maecenas ut tristique nulla, at tempor sem. Duis eu
+                      pellentesque dolor, vel suscipit dolor. Maecenas vel nulla
+                      in nunc malesuada pellentesque.
+                    </p>
+                  </div>
+                  <div class="post-comments">
+                    <div class="comment-wrap">
+                      <h4 class="btline-title btline-custom-title">
+                        5 Comments
+                      </h4>
+                      <ul class="comment-list">
+                        <li>
+                          <div class="avatar">
+                            <img src="images/comment-person.jpg" alt="" />
+                          </div>
+                          <div class="comment-text">
+                            <div class="comment-head clearfix">
+                              <span class="name-n-time">John on April 26
+                              5:33pm - <a href="#">Reply</a></span>
+                            </div>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Maecenas ut tristique nulla, at tempor sem.
+                            Duis eu pellentesque dolor, vel suscipit dolor.
+                            Maecenas vel nulla in nunc malesuada pellentesque.
+                          </div>
+                        </li>
+                        <li>
+                          <div class="avatar">
+                            <img src="images/comment-person.jpg" alt="" />
+                          </div>
+                          <div class="comment-text">
+                            <div class="comment-head clearfix">
+                              <span class="name-n-time">John Doe on April 26
+                              5:33pm - <a href="#">Reply</a></span>
+                            </div>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Maecenas ut tristique nulla, at tempor sem.
+                            Duis eu pellentesque dolor, vel suscipit dolor.
+                            Maecenas vel nulla in nunc malesuada pellentesque.
+                          </div>
+                          <ul>
+                            <li>
+                              <div class="avatar">
+                                <img src="images/comment-person.jpg" alt="" />
+                              </div>
+                              <div class="comment-text">
+                                <div class="comment-head clearfix">
+                                  <span class="name-n-time">John on April 26
+                                  5:33pm - <a href="#">Reply</a></span>
+                                </div>
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Maecenas ut tristique nulla, at
+                                tempor sem. Duis eu pellentesque dolor, vel
+                                suscipit dolor. Maecenas vel nulla in nunc
+                                malesuada pellentesque.
+                              </div>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <div class="avatar">
+                            <img src="images/comment-person.jpg" alt="" />
+                          </div>
+                          <div class="comment-text">
+                            <div class="comment-head clearfix">
+                              <span class="name-n-time">John Doe on April 26
+                              5:33pm - <a href="#">Reply</a></span>
+                            </div>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Maecenas ut tristique nulla, at tempor sem.
+                            Duis eu pellentesque dolor, vel suscipit dolor.
+                            Maecenas vel nulla in nunc malesuada pellentesque.
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div id="contact-form" class="comment-form-warp">
+                      <h4 class="btline-title btline-custom-title">
+                        Leave a Respons
+                      </h4>
+                      <form method="post" id="ajax-contact-form" action="">
+                        <div class="row">
+                          <div class="col-lg-4">
+                            <input type="text" name="personal" id="personal"
+                            value="Your name (required)"
+                            onfocus="(this.value == 'Your name (required)') &amp;&amp; (this.value = '')"
+                            onblur="(this.value == '') &amp;&amp; (this.value = 'Your name (required)')"
+                            class="error-input" />
+                          </div>
+                          <div class="col-lg-4">
+                            <input type="text" name="email" id="email"
+                            value="Your email (required)"
+                            onfocus="(this.value == 'Your email (required)') &amp;&amp; (this.value = '')"
+                            onblur="(this.value == '') &amp;&amp; (this.value = 'Your email (required)')" />
+                          </div>
+                          <div class="col-lg-4">
+                            <input type="text" name="website" id="website"
+                            value="Your website"
+                            onfocus="(this.value == 'Your website') &amp;&amp; (this.value = '')"
+                            onblur="(this.value == '') &amp;&amp; (this.value = 'Your website')" />
+                          </div>
+                        </div>
+                        <textarea name="message" id="message"
+                        onfocus="(this.value == 'Your message...') &amp;&amp; (this.value = '')"
+                        onblur="(this.value == '') &amp;&amp; (this.value = 'Your message...')"
+                        rows="" cols="">Your message...</textarea>
+                        <input type="submit" value="Submit" class="button"
+                        name="email-send" />
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        </div>
+     
+    
+    <div class="footer-area-container">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="footer-widget">
+              <img class="fotter-logo" src="images/fotter-logo.png" alt="" />
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit
+                ipsum voluptas dolore temporibus? Minus commodi eum ipsa illum.
+                Fugit cumque fuga.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="footer-widget widget_nav_menu">
+              <h4 class="footer-widget-title">
+                Latest Post
+              </h4>
+              <ul>
+                <li class="menu-item">
+                  <a href="#"> HTML5 Template </a>
+                </li>
+                <li class="menu-item">
+                  <a href="#"> Responsive Design </a>
+                </li>
+                <li class="menu-item">
+                  <a href="#"> Clean Design </a>
+                </li>
+                <li class="menu-item">
+                  <a href="#"> Multipurpose </a>
+                </li>
+                <li class="menu-item">
+                  <a href="#"> Portfolio 4 Column</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#"> Masonry Portfolio </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="footer-widget widget_nav_menu">
+              <h4 class="footer-widget-title">
+                Page
+              </h4>
+              <ul>
+                <li class="menu-item">
+                  <a href="#"> Home Page </a>
+                </li>
+                <li class="menu-item">
+                  <a href="#"> Portfolio </a>
+                </li>
+                <li class="menu-item">
+                  <a href="#"> Blog </a>
+                </li>
+                <li class="menu-item">
+                  <a href="#"> 404 Pages </a>
+                </li>
+                <li class="menu-item">
+                  <a href="#"> About Us</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#"> Contact Us </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="footer-widget">
+              <h4 class="footer-widget-title">
+                Contact Us
+              </h4>
+              <div class="footer-contact">
+                34, Lorem Dolor, Amet Lorem, Ipsum Phone: 600 12003 45006 Fax:
+                08010 12323 300456 Email: info@loremipsum.com
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-holder">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <p>
+              2015 Â© All Rights Reserved
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  Bootstrap core JavaScript
+      ================================================== -->
+    <!--  Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.min.js" type="text/javascript" ></script>
+    <script
+    src="js/bootstrap.min.js" type="text/javascript" ></script><script
+    src="js/superfish.js" type="text/javascript" ></script><script
+    src="js/jquery.easing.js" type="text/javascript" ></script><script
+    src="js/wow.js" type="text/javascript" ></script><script
+    src="js/jquery.isotope.min.js" type="text/javascript" ></script><script
+    src="js/owl.carousel.min.js" type="text/javascript" ></script><script
+    src="js/jquery.colorbox-min.js" type="text/javascript" ></script><script
+    src="js/jflickrfeed.min.js" type="text/javascript"></script><script
+    src="js/jquery.fitvids.js" type="text/javascript" ></script><script
+    src="js/jquery-ui-1.10.4.custom.min.js" type="text/javascript"></script> <script
+    src="js/jquery.fractionslider.min.js" type="text/javascript"></script> <script src="js/main.js"
+    type="text/javascript"></script>
+  </h:body>
+</html>

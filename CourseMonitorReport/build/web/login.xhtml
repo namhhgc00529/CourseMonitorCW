@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="description" content=""/>
+        <meta name="author" content=""/>
+        <link rel="shortcut icon" href="images/favicon.ico"/>
+
+        <title>Jesdo - Responsive Multipurpose Template</title>
+
+        <!-- Fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Raleway:400,800,500,600,300,700' rel='stylesheet' type='text/css'/>
+        <link href="css/font-awesome.min.css" rel="stylesheet"/>
+
+        <!-- Styles  CSS-->
+        <link href="css/bootstrap.css" rel="stylesheet"/>
+        <link href="css/style.css" rel="stylesheet"/>
+        <link href="css/animate.css" rel="stylesheet"/>
+        <link href="css/styleLogin.css" rel="stylesheet"/>
+
+    </h:head>
+    <h:body>
+        <ui:insert name="header" >
+            <ui:include src="/template/navBar.xhtml"/>
+        </ui:insert>
+
+
+        <div class="container-about">         
+            <div class="container">
+                <div class="row">
+
+                    <div class="login-page">
+                        <div class="form">
+                            <form class="register-form">
+                                <input type="text" placeholder="name"/>
+                                <input type="password" placeholder="password"/>
+                                <input type="text" placeholder="email address"/>
+                                <button>create</button>
+                                <p class="message">Already registered? <a href="#">Sign In</a></p>
+                            </form>
+                            <h:form class="login-form">
+                                <h:inputText value="#{courseLeaderBean.clUsername}"  p:placeholder="username"/>
+                                <h:inputSecret value="#{courseLeaderBean.clPassword}"  p:placeholder="password"/>
+                                
+                                <h:selectOneMenu value="#{courseLeaderBean.role}" >
+                                 	<f:selectItem itemValue="1" itemLabel="Course Leader" />
+                                         <f:selectItem itemValue="2" itemLabel="Course Moderator" />
+                                  </h:selectOneMenu>
+                                <br></br><br></br>
+                                <h:commandButton class="login-button" action="#{courseLeaderBean.checkLeaderLogin()}" value="Login"/>
+                                <p class="message">Not registered? <a href="#">Create an account</a></p>
+                            </h:form>
+                        </div>
+                    </div>
+                </div>         
+            </div>
+        </div>
+
+
+
+        <!-- Bootstrap core JavaScript
+  ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/superfish.js"></script>
+        <script src="js/jquery.easing.js"></script>
+        <script src="js/wow.js"></script>
+        <script src="js/jquery.isotope.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/jquery.colorbox-min.js"></script>
+        <script src="js/jquery.fitvids.js"></script>
+        <script src="js/jflickrfeed.min.js"></script>
+        <script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+        <script src="js/jquery.fractionslider.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/jsLogin.js"></script>
+
+    </h:body>
+</html>
+

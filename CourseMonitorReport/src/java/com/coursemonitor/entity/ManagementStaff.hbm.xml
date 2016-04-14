@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 28, 2016 9:57:59 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.coursemonitor.entity.ManagementStaff" table="ManagementStaff" schema="dbo" catalog="CourseMonitorReport" optimistic-lock="version">
+        <id name="msId" type="int">
+            <column name="MS_Id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="faculty" class="com.coursemonitor.entity.Faculty" fetch="select">
+            <column name="F_Id" />
+        </many-to-one>
+        <property name="msName" type="string">
+            <column name="MS_Name" length="50" />
+        </property>
+        <property name="msEmail" type="string">
+            <column name="MS_Email" length="50" />
+        </property>
+        <property name="msUsername" type="string">
+            <column name="MS_Username" length="50" />
+        </property>
+        <property name="msPassword" type="string">
+            <column name="MS_Password" length="50" />
+        </property>
+        <property name="msRole" type="string">
+            <column name="MS_Role" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

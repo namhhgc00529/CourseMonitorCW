@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 10, 2016 10:03:52 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.coursemonitor.entity.Staff" table="Staff" schema="dbo" catalog="CourseMonitorReport" optimistic-lock="version">
+        <id name="stId" type="int">
+            <column name="ST_Id" />
+            <generator class="assigned" />
+        </id>
+        <property name="stName" type="string">
+            <column name="ST_Name" length="50" />
+        </property>
+        <property name="stEmail" type="string">
+            <column name="ST_Email" length="50" />
+        </property>
+        <property name="stUsername" type="string">
+            <column name="ST_Username" length="50" />
+        </property>
+        <property name="stPassword" type="string">
+            <column name="ST_Password" length="50" />
+        </property>
+        <set name="assignCoursesForCmId" table="AssignCourse" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CM_Id" />
+            </key>
+            <one-to-many class="com.coursemonitor.entity.AssignCourse" />
+        </set>
+        <set name="assignCoursesForClId" table="AssignCourse" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CL_Id" />
+            </key>
+            <one-to-many class="com.coursemonitor.entity.AssignCourse" />
+        </set>
+    </class>
+</hibernate-mapping>

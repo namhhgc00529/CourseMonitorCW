@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE html
+   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <meta content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <title>
+      DLT
+    </title>
+      Fonts 
+    <link href="http://fonts.googleapis.com/css?family=Raleway:400,800,500,600,300,700" rel="stylesheet" type="text/css" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+      Styles CSS 
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/animate.css" rel="stylesheet" />
+<!--      HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+      queries 
+      [if lt IE 9]> <script
+      src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script
+      src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif] -->
+    
+    </h:head>
+    
+  <h:body>
+      <ui:insert name="header1" >
+		  <ui:include src="/template/navBar.xhtml" />
+		</ui:insert>
+    <div class="pages-header-container">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="pages-header">
+              <ul class="breadcrumbs">
+                <li>
+                  <a href="index.html">Admin</a>
+                </li>
+                <li>
+                  <a href="about-us.html">DLT</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="blog-posts">
+        <div class="row">
+          <div class="col-lg-3">
+        <div class="sidebar">
+
+          <div class="widget">
+            <div class="search-widget">
+              <form method="get" id="searchform">
+                <input type="text" onkeyup="keyUp();" onblur="if(this.value == '') {this.value=this.defaultValue}" onfocus="if(this.value=='' || this.value == 'Search...') this.value=''" value="Search..." name="s"/>
+                <input type="submit" value=" "/>
+                <i class="fa fa-search search-button"></i>
+              </form>
+            </div>
+          </div>
+
+          <div class="widget widget_categories">
+              <h4 class="btline-title">Categories</h4>
+               <ul>
+                <li>
+                  <a href="index_admin">All course</a>
+                </li>
+                <li>
+                  <a href="admin_assignCourse.xhtml">Assign course</a>
+                </li>
+                <li>
+                  <a href="admin_pvc.xhtml">PVC</a>
+                </li>
+                <li>
+                  <a href="admin_dlt.xhtml">DLT</a>
+                </li>
+                <li>
+                  <a href="index_staff">All staff</a>
+                </li>
+                <li>
+                  <a href="#">Faculty</a>
+                </li>
+                <li>
+                  <a href="admin_assignFaculty.xhtml">Assign Faculty</a>
+                </li>
+              </ul>
+          </div>
+        </div>
+      </div>
+          <div class="col-lg-9">
+        <h:form>
+            <h:dataTable value="#{dltBean.list}" var="c"
+    			styleClass="table table-hover"
+    		>
+
+    			<h:column>
+    			
+    				<f:facet name="header">DLT No</f:facet>
+
+    				
+                                <h:outputText value="#{c.dltId}" />
+					
+    			</h:column>
+                <h:column>
+    			
+    				<f:facet name="header">DLT Name</f:facet>
+                                <h:outputText value="#{c.dltName}"/>
+					
+    			</h:column>
+                <h:column>
+    			
+    				<f:facet name="header">DLT Email</f:facet>
+                                <h:outputText value="#{c.dltEmail}" />
+					
+    			</h:column>
+    			<h:column>
+                            <h:commandButton class="button" style="color: red;border-color: red" value="Delete" 
+                                             action="#{dltBean.deleteDLT(c.dltId)}" />	
+                        </h:column>
+    			<h:column>
+                            <h:commandButton class="button" value="Edit" action="#{dltBean.redirectDLTDetail(c.dltId)}"/>
+    			</h:column>
+
+    		</h:dataTable>   
+            <a  class="button" style="color: green;border-color: green" href="addNew_dlt.xhtml">Create DLT</a> 
+    	</h:form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-area-container">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="footer-widget">
+              <img class="fotter-logo" src="images/fotter-logo.png" alt="" />
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit
+                ipsum voluptas dolore temporibus? Minus commodi eum ipsa illum.
+                Fugit cumque fuga.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="footer-widget widget_nav_menu">
+              <h4 class="footer-widget-title">
+                Latest Post
+              </h4>
+              <ul>
+                <li class="menu-item">
+                  <a href="#"> HTML5 Template </a>
+                </li>
+                <li class="menu-item">
+                  <a href="#"> Responsive Design </a>
+                </li>
+                <li class="menu-item">
+                  <a href="#"> Clean Design </a>
+                </li>
+                <li class="menu-item">
+                  <a href="#"> Multipurpose </a>
+                </li>
+                <li class="menu-item">
+                  <a href="#"> Portfolio 4 Column</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#"> Masonry Portfolio </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="footer-widget widget_nav_menu">
+              <h4 class="footer-widget-title">
+                Page
+              </h4>
+              <ul>
+                <li class="menu-item">
+                  <a href="#"> Home Page </a>
+                </li>
+                <li class="menu-item">
+                  <a href="#"> Portfolio </a>
+                </li>
+                <li class="menu-item">
+                  <a href="#"> Blog </a>
+                </li>
+                <li class="menu-item">
+                  <a href="#"> 404 Pages </a>
+                </li>
+                <li class="menu-item">
+                  <a href="#"> About Us</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#"> Contact Us </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="footer-widget">
+              <h4 class="footer-widget-title">
+                Contact Us
+              </h4>
+              <div class="footer-contact">
+                34, Lorem Dolor, Amet Lorem, Ipsum Phone: 600 12003 45006 Fax:
+                08010 12323 300456 Email: info@loremipsum.com
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-holder">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <p>
+              2015 Â© All Rights Reserved
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+      Bootstrap core JavaScript
+      ================================================== 
+      Placed at the end of the document so the pages load faster 
+    <script src="js/jquery.min.js" type="text/javascript" ></script>
+    <script
+    src="js/bootstrap.min.js" type="text/javascript" ></script><script
+    src="js/superfish.js" type="text/javascript" ></script><script
+    src="js/jquery.easing.js" type="text/javascript" ></script><script
+    src="js/wow.js" type="text/javascript" ></script><script
+    src="js/jquery.isotope.min.js" type="text/javascript" ></script><script
+    src="js/owl.carousel.min.js" type="text/javascript" ></script><script
+    src="js/jquery.colorbox-min.js" type="text/javascript" ></script><script
+    src="js/jflickrfeed.min.js" type="text/javascript"></script><script
+    src="js/jquery.fitvids.js" type="text/javascript" ></script><script
+    src="js/jquery-ui-1.10.4.custom.min.js" type="text/javascript"></script> <script
+    src="js/jquery.fractionslider.min.js" type="text/javascript"></script> <script src="js/main.js"
+    type="text/javascript"></script>
+  </h:body>
+</html>

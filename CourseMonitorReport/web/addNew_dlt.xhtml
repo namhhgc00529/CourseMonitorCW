@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd" >
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <meta content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <link rel="shortcut icon" href="images/favicon.ico" />
+        <title>
+            Jesdo - Responsive Multipurpose Template
+        </title>
+        <!--  Fonts -->
+        <link href="http://fonts.googleapis.com/css?family=Raleway:400,800,500,600,300,700" rel="stylesheet" type="text/css" />
+        <link href="css/font-awesome.min.css" rel="stylesheet" />
+        <!--  Styles CSS -->
+        <link href="css/bootstrap.css" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet" />
+        <link href="css/animate.css" rel="stylesheet" />
+        <!--  HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+          queries -->
+        <!--  [if lt IE 9]> <script
+          src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script
+          src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+          <![endif] -->
+    </h:head>
+    <h:body>
+        <ui:insert name="header" >
+            <ui:include src="/template/navBar.xhtml" />
+        </ui:insert>
+
+
+        <div class="pages-header-container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="pages-header">
+                            <h3 class="title-un">
+                                <a href="contact-us.html">Create course</a>
+                            </h3>
+                            <ul class="breadcrumbs">
+                                <li>
+                                    <a href="index.html">Home</a>
+                                </li>
+                                <li>
+                                    <a href="contact-us.html">Create course</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-contact-form">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div id="contact-form">
+                            <h:form id="ajax-contact-form" enctype="multipart/form-data">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <h:inputText value="#{dltBean.id}" p:placeholder="PVC ID (required)"/>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <h:inputText value="#{dltBean.nameDLT}" p:placeholder="PVC Name (required)"/>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <h:inputText value="#{dltBean.emailDLT}" p:placeholder="Email (required)"/>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <h:commandButton class="button" value="Create" action="#{dltBean.saveDLT()}"/>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                            </h:form>
+
+
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="height5"></div>
+                        <h4>
+                            <i class="fa fa-home"></i> Lorem located
+                        </h4>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit <br />
+                            Lorem ipsum dolor sit amet, 590 consectetur adipisicing elit.
+                        </p>
+                        <div class="height5"></div>
+                        <h4>
+                            <i class="fa fa-slideshare"></i> Customer Support
+                        </h4>
+                        <p>
+                            Phone: 83456293 32945293 459 <br /> eMail:
+                            support@loremipsum.com
+                        </p>
+                        <div class="height5"></div>
+                        <h4>
+                            <i class="fa fa-paper-plane-o"></i> Technical Support
+                        </h4>
+                        <p>
+                            Phone: 23745923 283792 3542354 <br /> eMail:
+                            support@loremipsum.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-area-container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="footer-widget">
+                            <img class="fotter-logo" src="images/fotter-logo.png" alt="" />
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit
+                                ipsum voluptas dolore temporibus? Minus commodi eum ipsa illum.
+                                Fugit cumque fuga.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="footer-widget widget_nav_menu">
+                            <h4 class="footer-widget-title">
+                                Latest Post
+                            </h4>
+                            <ul>
+                                <li class="menu-item">
+                                    <a href="#"> HTML5 Template </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#"> Responsive Design </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#"> Clean Design </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#"> Multipurpose </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#"> Portfolio 4 Column</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#"> Masonry Portfolio </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="footer-widget widget_nav_menu">
+                            <h4 class="footer-widget-title">
+                                Page
+                            </h4>
+                            <ul>
+                                <li class="menu-item">
+                                    <a href="#"> Home Page </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#"> Portfolio </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#"> Blog </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#"> 404 Pages </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#"> About Us</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#"> Contact Us </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="footer-widget">
+                            <h4 class="footer-widget-title">
+                                Contact Us
+                            </h4>
+                            <div class="footer-contact">
+                                34, Lorem Dolor, Amet Lorem, Ipsum Phone: 600 12003 45006 Fax:
+                                08010 12323 300456 Email: info@loremipsum.com
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-holder">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p>
+                            2015 Â© All Rights Reserved
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--  Bootstrap core JavaScript
+          ================================================== -->
+        <!--  Placed at the end of the document so the pages load faster -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/superfish.js"></script>
+        <script src="js/jquery.easing.js"></script>
+        <script src="js/wow.js"></script>
+        <script src="js/jquery.isotope.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/jquery.colorbox-min.js"></script>
+        <script src="js/jflickrfeed.min.js"></script>
+        <script src="js/jquery.fitvids.js"></script>
+        <script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+        <script src="js/jquery.fractionslider.min.js"></script>
+        <script src="js/main.js"></script>
+
+    </h:body>
+</html>

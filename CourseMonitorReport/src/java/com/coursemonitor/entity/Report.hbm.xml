@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 28, 2016 9:57:59 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.coursemonitor.entity.Report" table="Report" schema="dbo" catalog="CourseMonitorReport" optimistic-lock="version">
+        <id name="reportId" type="int">
+            <column name="ReportId" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="course" class="com.coursemonitor.entity.Course" fetch="select">
+            <column name="CourseId" length="50" />
+        </many-to-one>
+        <many-to-one name="staffByClId" class="com.coursemonitor.entity.Staff" fetch="select">
+            <column name="CL_Id" />
+        </many-to-one>
+        <many-to-one name="staffByCmId" class="com.coursemonitor.entity.Staff" fetch="select">
+            <column name="CM_Id" />
+        </many-to-one>
+        <property name="year" type="java.lang.Integer">
+            <column name="Year" />
+        </property>
+        <property name="description" type="string">
+            <column name="Description" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="Status" />
+        </property>
+        <property name="comment" type="string">
+            <column name="Comment" />
+        </property>
+    </class>
+</hibernate-mapping>

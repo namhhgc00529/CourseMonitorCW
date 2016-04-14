@@ -1,0 +1,461 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="description" content=""/>
+        <meta name="author" content=""/>
+        <link rel="shortcut icon" href="images/favicon.ico"/>
+
+        <title>Course Monitor</title>
+
+        <!-- Fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Raleway:400,800,500,600,300,700' rel='stylesheet' type='text/css'/>
+        <link href="css/font-awesome.min.css" rel="stylesheet"/>
+
+        <!-- Styles  CSS-->
+        <link href="css/bootstrap.css" rel="stylesheet"/>
+        <link href="css/style.css" rel="stylesheet"/>
+        <link href="css/animate.css" rel="stylesheet"/>
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    
+    </h:head>
+
+    <h:body>
+        <ui:insert name="header" >
+            <ui:include src="/template/navBarCM.xhtml" />
+        </ui:insert>
+
+        <div class="portfolio-container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <nav class="port-filter">
+                          
+                        </nav>
+
+                        <div class="classic-portfolio col-4-portfolio portfolio">
+                            <h:form>
+                                <c:forEach items="#{reportBean.commentedReport}" var="c">
+                                    <div class="project-item applications illustration  ">
+                                        <div class="project-image">
+                                            <img src="images/Course/#{c.course.courseImg}" width="200px" height="180px"  alt=""/>
+                                            <div class="overlay">
+                                            </div>
+                                        </div>
+                                        <div class="project-info">
+                                            <ul class="project-cat">
+                                                <li><a href="#">#{c.course.courseId}</a></li>
+                                            </ul>
+                                            <h4><a href="single-portfolio.html">#{c.course.courseName}</a></h4>
+                                            <p>
+                                                #{c.course.academicSession}
+                                            </p>
+                                            <p>
+                                                <h:commandButton class="button" value="View" action="#{reportBean.viewCommentedReport(c)}"/>
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </c:forEach>
+
+                            </h:form>
+                        </div>
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-about-fact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h3 class="title-un">WHY CHOOSE US</h3>
+                        <p class="title-un-des">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia consequuntur incidunt quod deleniti nostrum, eaque facilis omnis totam itaque sequi autem, ad voluptate explicabo ut ab alias, optio sed ex. </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container-our-services">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-4">
+                        <div class="service-box-la wow fadeInDown animated">
+                            <div class="service-icon">
+                                <i class="fa fa-anchor"></i>
+                            </div>
+                            <div class="service-info">
+                                <h5>UNIQUE FEATURES</h5>
+                                <div class="desc">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris iaculis sapien sit amet arcu ornare, non commodo ligula consectetur adipiscing elit.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="service-box-la wow fadeInDown animated" data-wow-delay=".2s">
+                            <div class="service-icon">
+                                <i class="fa fa-bell-o"></i>
+                            </div>
+                            <div class="service-info">
+                                <h5>UNIQUE FEATURES</h5>
+                                <div class="desc">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris iaculis sapien sit amet arcu ornare, non commodo ligula consectetur adipiscing elit.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="service-box-la wow fadeInDown animated" data-wow-delay=".4s">
+                            <div class="service-icon">
+                                <i class="fa fa-bicycle"></i>
+                            </div>
+                            <div class="service-info">
+                                <h5>LUXURY LIFESTYLE</h5>
+                                <div class="desc">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris iaculis sapien sit amet arcu ornare, non commodo ligula consectetur adipiscing elit.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-4">
+                        <div class="service-box-la wow fadeInDown animated">
+                            <div class="service-icon">
+                                <i class="fa fa-slideshare"></i>
+                            </div>
+                            <div class="service-info">
+                                <h5>GRAPHIC DESIGN</h5>
+                                <div class="desc">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris iaculis sapien sit amet arcu ornare, non commodo ligula consectetur adipiscing elit.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="service-box-la wow fadeInDown animated" data-wow-delay=".2s">
+                            <div class="service-icon">
+                                <i class="fa fa-paper-plane-o"></i>
+                            </div>
+                            <div class="service-info">
+                                <h5>ILLUSTRATION</h5>
+                                <div class="desc">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris iaculis sapien sit amet arcu ornare, non commodo ligula consectetur adipiscing elit.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="service-box-la wow fadeInDown animated" data-wow-delay=".4s">
+                            <div class="service-icon">
+                                <i class="fa fa-lemon-o"></i>
+                            </div>
+                            <div class="service-info">
+                                <h5>DEVELOPMENT</h5>
+                                <div class="desc">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris iaculis sapien sit amet arcu ornare, non commodo ligula consectetur adipiscing elit.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container-about-fact marginb-80px">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-lg-12">
+                        <h3 class="title-un">OUR SKILLS</h3>
+                        <p class="title-un-des">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora molestias ratione explicabo provident, possimus temporibus! Odio iste officia aperiam deleniti architecto eius nulla quia nemo, hic voluptate at delectus illo.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="pb-container">
+            <div class="container ">
+                <div class="row">
+                    <div class="col-lg-12">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <h4>What We Do</h4>
+                        Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nibh euismod tincidunt.
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="sq-progress-container">
+                            <span class="sq-progress-label">Photoshop</span>
+                            <div class="sq-progress">
+                                <div class="sq-progress-bar progressbr70p"></div>
+                                <div class="sq-progress-rate">60%</div>
+                            </div>
+                        </div>
+                        <div class="sq-progress-container">
+                            <span class="sq-progress-label">HTML5</span>
+                            <div class="sq-progress">
+                                <div class="sq-progress-bar progressbr80p"></div>
+                                <div class="sq-progress-rate">90%</div>
+                            </div>
+                        </div>
+                        <div class="sq-progress-container">
+                            <span class="sq-progress-label">CSS3</span>
+                            <div class="sq-progress">
+                                <div class="sq-progress-bar progressbr70p"></div>
+                                <div class="sq-progress-rate">90%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-about-fact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h3 class="title-un">OUR BLOG POSTS</h3>
+                        <p class="title-un-des">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore rerum quod accusantium excepturi, tenetur recusandae neque cumque eaque quasi. Cum nemo consequuntur debitis illo libero possimus dolore placeat suscipit. Beatae. </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container-about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <ul class="blog-posts-g">
+                            <li>
+                                <div class="post-img">
+                                    <img src="images/post/post-1.jpg" alt="Meet the New UI Design"/>
+                                </div>
+                                <div class="post-content">
+                                    <h5><a href="single-post.html"> Jesdo Fully Responsive </a></h5>
+                                    <div class="post-info"><span>3 October 2015</span>/<span><a href="blog-right-sidebar.html"> Design</a></span></div>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem deleniti quidem, labore natus, ipsa odit ex, distinctio perferendis est nihil eveniet temporibus aliquam quae omnis cum consectetur alias iure, harum.
+                                    </p>
+
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post-img">
+                                    <img src="images/post/post-4.jpg" alt="A LOOK INSIDE THE Workspace"/>
+                                </div>
+                                <div class="post-content">
+                                    <h5><a href="single-post.html"> Multiporpose Template </a></h5>
+                                    <div class="post-info"><span>6 October 2015</span>/<span><a href="blog-right-sidebar.html"> Web</a></span></div>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem deleniti quidem, labore natus, ipsa odit ex, distinctio perferendis est nihil eveniet temporibus aliquam quae omnis cum consectetur alias iure, harum.
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post-img">
+                                    <img src="images/post/post-2.jpg" alt="Inspiration of UX design"/>
+                                    <div class="overlay">
+                                    </div>
+                                </div>
+                                <div class="post-content">
+                                    <h5><a href="single-post.html"> Jesdo Fully Responsive </a></h5>
+                                    <div class="post-info"><span>6 October 2015</span>/<span><a href="blog-right-sidebar.html"> Design</a></span></div>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem deleniti quidem, labore natus, ipsa odit ex, distinctio perferendis est nihil eveniet temporibus aliquam quae omnis cum consectetur alias iure, harum.
+                                    </p>
+                                </div>
+                            </li>
+
+
+
+                        </ul>
+                        <div class="align-center"> <a class="button" href="#">More Posts</a> </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container-about-fact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h3 class="title-un">TESTIMONIALS</h3>
+                        <p class="title-un-des">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates similique nesciunt voluptate incidunt at esse eum dolor tempore non perspiciatis neque, rem enim est? Inventore magni iusto, provident officia iste.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="testimonials-container ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <div id="owl-demo"  class="testimonials owl-carousel">
+
+                            <div class="testimonial">
+
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut ullamcorper lacus, vel mattis nibh. Aliquam a enim rutrum, ultrices purus at, porta leo. Duis egestas gravida magna at pellentesque. Mauris ut augue sodales, porta nulla sit amet, tristique dui. Nullam est ligula, sollicitudin ac nunc eget, porta fringilla nunc. Nulla et tempus metus, eu pretium mi. Donec ut felis.</p>
+                                <div class="client">
+
+                                    <div class="client-info">
+                                        <div class="client-name">
+                                            John Doe
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut ullamcorper lacus, vel mattis nibh. Aliquam a enim rutrum, ultrices purus at, porta leo. Duis egestas gravida magna at pellentesque. Mauris ut augue sodales, porta nulla sit amet, tristique dui. Nullam est ligula, sollicitudin ac nunc eget, porta fringilla nunc. Nulla et tempus metus, eu pretium mi. Donec ut felis.</p>
+                                <div class="client">
+
+                                    <div class="client-info">
+                                        <div class="client-name">
+                                            Joly Doe
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut ullamcorper lacus, vel mattis nibh. Aliquam a enim rutrum, ultrices purus at, porta leo. Duis egestas gravida magna at pellentesque. Mauris ut augue sodales, porta nulla sit amet, tristique dui. Nullam est ligula, sollicitudin ac nunc eget, porta fringilla nunc. Nulla et tempus metus, eu pretium mi. Donec ut felis.</p>
+                                <div class="client">
+
+                                    <div class="client-info">
+                                        <div class="client-name">
+                                            John Doe
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-area-container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="footer-widget">
+                            <img class="fotter-logo" src="images/fotter-logo.png" alt=""/>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit ipsum voluptas dolore temporibus? Minus commodi eum ipsa illum. Fugit cumque fuga.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="footer-widget widget_nav_menu">
+                            <h4 class="footer-widget-title">Latest Post</h4>
+                            <ul>
+                                <li class="menu-item"><a href="#"> HTML5 Template </a></li>
+                                <li class="menu-item"><a href="#"> Responsive Design </a></li>
+                                <li class="menu-item"><a href="#"> Clean Design  </a></li>
+                                <li class="menu-item"><a href="#"> Multipurpose </a></li>
+                                <li class="menu-item"><a href="#"> Portfolio 4 Column</a></li>
+                                <li class="menu-item"><a href="#"> Masonry Portfolio </a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="footer-widget widget_nav_menu">
+                            <h4 class="footer-widget-title">Page</h4>
+                            <ul>
+                                <li class="menu-item"><a href="#"> Home Page </a></li>
+                                <li class="menu-item"><a href="#"> Portfolio </a></li>
+                                <li class="menu-item"><a href="#"> Blog  </a></li>
+                                <li class="menu-item"><a href="#"> 404 Pages </a></li>
+                                <li class="menu-item"><a href="#"> About Us</a></li>
+                                <li class="menu-item"><a href="#"> Contact Us </a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="footer-widget">
+                            <h4 class="footer-widget-title">Contact Us</h4>
+                            <div class="footer-contact">
+                                <li>34, Lorem Dolor, Amet </li>
+                                <li>Lorem, Ipsum</li>
+                                <li>Phone: 600 12003 45006 </li>
+                                <li>Fax: 08010 12323 300456 </li>
+                                <li>Email: info@loremipsum.com</li>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="footer-holder">
+            <div class="container">
+                <footer class="site-footer">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p>2015 © All Rights Reserved</p>
+
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/superfish.js"></script>
+        <script src="js/jquery.easing.js"></script>
+        <script src="js/wow.js"></script>
+        <script src="js/jquery.isotope.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/jquery.colorbox-min.js"></script>
+        <script src="js/jflickrfeed.min.js"></script>
+        <script src="js/jquery.fitvids.js"></script>
+        <script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+        <script src="js/jquery.fractionslider.min.js"></script>
+        <script src="js/main.js"></script>
+    </h:body>
+</html>

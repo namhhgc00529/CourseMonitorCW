@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 10, 2016 10:03:52 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.coursemonitor.entity.AssignFaculty" table="AssignFaculty" schema="dbo" catalog="CourseMonitorReport" optimistic-lock="version">
+        <id name="idAf" type="int">
+            <column name="idAF" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="course" class="com.coursemonitor.entity.Course" fetch="select">
+            <column name="CourseId" length="50" />
+        </many-to-one>
+        <many-to-one name="dlt" class="com.coursemonitor.entity.Dlt" fetch="select">
+            <column name="DLT_Id" />
+        </many-to-one>
+        <many-to-one name="faculty" class="com.coursemonitor.entity.Faculty" fetch="select">
+            <column name="FacultyId" />
+        </many-to-one>
+        <many-to-one name="pvc" class="com.coursemonitor.entity.Pvc" fetch="select">
+            <column name="PVC_Id" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

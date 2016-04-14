@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="./css/default.css"/>
+        <h:outputStylesheet name="./css/cssLayout.css"/>
+        <title>Facelets Template</title>
+    </h:head>
+
+    <h:body>
+
+      <ui:composition> 
+<header class="site-header">
+    <div class="header-inner">
+        <div class="container">
+            <div class="row">
+                <div class="header-table col-md-12">
+                    <div class="brand">
+                        <a href="#">
+                            <img src="images/logo.png" alt="Jesdo"/>
+                        </a>
+                    </div>
+                    <nav id="nav-wrap" class="main-nav">
+                        <div id="mobnav-btn"> </div>
+                        <ul class="sf-menu">
+                            <li class="current">
+                                <a href="index.xhtml">Home</a>
+                            </li>
+                            <li>
+                                <a href="portfolio-2-col.html">Portfolio</a>
+                                <div class="mobnav-subarrow"><i class="fa fa-caret-down"></i></div>
+                                <ul class="sub-menu">
+                                    <li><a href="portfolio-2-col.html">Portfolio 2 columns</a></li>
+                                    <li><a href="portfolio-3-col.html">Portfolio 3 columns</a></li>
+                                    <li><a href="portfolio-4-col.html">Portfolio 4 columns</a></li>
+                                    <li><a href="masonry-portfolio.html">Masonry Portfolio</a></li>
+                                    <li><a href="single-portfolio.html">Single Portfolio</a></li>
+                                    <li><a href="single-portfolio-2.html">Single Portfolio 2</a></li>
+                                    <li><a href="single-portfolio-3.html">Single Portfolio 3</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="about-us.html">Course</a>
+                                <div class="mobnav-subarrow"><i class="fa fa-caret-down"></i></div>
+                                <ul class="sub-menu">
+                                    <li><a href="addNew.xhtml">Add New Course</a></li>
+                                    <li><a href="assignCourse.xhtml">Assign Course</a></li>
+                                    <li><a href="contact-us.html">Contact</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="cmInbox.xhtml">Inbox</a></li>
+                            <li>
+                                <a href="login.xhtml">Login</a>                                
+                            </li>
+                            <li class="menu-search-bar">
+                                <a id="search-label"><i class="fa fa-search"></i></a>
+                                <h:form class="search-bar" id="searchform" >
+                                    <h:inputText value="#{courseBean.search}" p:placeholder="Search" onkeypress="#{courseBean.searchCourse()}" />
+                                </h:form>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+      </ui:composition>
+
+    </h:body>
+
+</html>
